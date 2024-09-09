@@ -5,14 +5,15 @@ public record class DrinkDto
   int Id, 
   string Name,
   string MainSpirit,
+  string? Image,
   string[] Ingredients,
   decimal[] MeasurementsOz,
+  string[]? Bitters,
   string[]? Garnish,
   string Color,
-  string? Image,
   string[] RecommendedGlasses,
   string[] Notes,
   string[] Method,
   string? Credit,
   string Vibe
-)
+);
