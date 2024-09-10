@@ -3,3 +3,22 @@ GET http://localhost:5047/drinks
 GET http://localhost:5047/drinks/2
 ###
 GET http://localhost:5047/drinks/ByAlcohol/Whiskey
+###
+POST http://localhost:5047/drinks 
+Content-Type: application/json
+
+{
+  "name": "Martini",
+  "mainSpirit": "Gin",
+  "image": "",
+  "ingredients": ["Gin", "White Vermouth"],
+  "measurmentsOz": [2, 0.5],
+  "bitters": ["1 dash or Orange Bitters"],
+  "garnish": ["An Olive", "A Lemon Peel"],
+  "color": "Clear",
+  "recommendedGlasses": ["Martini Glass", "Coupe Glass"],
+  "notes": ["007 doesnt know how martinis work"],
+  "method": ["Stirred"],
+  "credit": "",
+  "vibe": "Classic"
+}
