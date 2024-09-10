@@ -55,7 +55,13 @@ List<DrinkDto> drinks = [
   )
 ];
 
+// Get all Drinks
+
 app.MapGet("drinks", () => drinks);
+
+// Get specific drinks
+app.MapGet("drinks/{id}", (int id) => drinks.Find(drink => drink.Id == id));
+
 
 
 app.MapGet("/", () => "Hello World!");
