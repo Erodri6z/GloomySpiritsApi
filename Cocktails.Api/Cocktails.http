@@ -1,9 +1,5 @@
 GET http://localhost:5047/drinks
-
 ###
-
 GET http://localhost:5047/drinks/2
-
 ###
-
 GET http://localhost:5047/drinks/ByAlcohol/Whiskey
