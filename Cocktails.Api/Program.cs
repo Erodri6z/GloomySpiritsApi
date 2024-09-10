@@ -92,6 +92,31 @@ app.MapPost("drinks", (CreateDrinkDto newDrink) => {
   return Results.CreatedAtRoute(GetDrinkEndPointName, new { id = drink.Id }, drink);
 });
 
+// Update a drink
+
+app.MapPut("drinks/{id}", (int id, UpdateDrinkDto updatedDrink) =>
+{
+  var index = drinks.FindIndex(drink => drink.Id == id);
+  drinks[index] = new DrinkDto(
+    id,
+    updatedDrink.Name,
+    updatedDrink.MainSpirit,
+    updatedDrink.Image,
+    updatedDrink.Ingredients,
+    updatedDrink.MeasurementsOz,
+    updatedDrink.Bitters,
+    updatedDrink.Garnish,
+    updatedDrink.Color,
+    updatedDrink.RecommendedGlasses,
+    updatedDrink.Notes,
+    updatedDrink.Method,
+    updatedDrink.Credit,
+    updatedDrink.Vibe
+  );
+
+  return Results.NoContent();
+});
+
 app.MapGet("/", () => "Hello World!");
 
 app.Run();
