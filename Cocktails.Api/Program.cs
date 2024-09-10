@@ -3,6 +3,7 @@ using Cocktails.Api.Dtos;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
+const string GetDrinkEndPointName = "GetDrink";
 
 List<DrinkDto> drinks = [
   new (
@@ -61,7 +62,7 @@ app.MapGet("drinks", () => drinks);
 
 // Get specific drinks
 app.MapGet("drinks/{id}", (int id) => drinks.Find(drink => drink.Id == id))
-  .WithName("GetDrink");
+  .WithName(GetDrinkEndPointName);
 
 // Get all Drinks based on main spirit
 
@@ -88,7 +89,7 @@ app.MapPost("drinks", (CreateDrinkDto newDrink) => {
   );
   drinks.Add(drink);
 
-  return Results.CreatedAtRoute("GetDrink", new { id = drink.Id }, drink);
+  return Results.CreatedAtRoute(GetDrinkEndPointName, new { id = drink.Id }, drink);
 });
 
 app.MapGet("/", () => "Hello World!");
