@@ -62,7 +62,9 @@ app.MapGet("drinks", () => drinks);
 // Get specific drinks
 app.MapGet("drinks/{id}", (int id) => drinks.Find(drink => drink.Id == id));
 
+// Get all Drinks based on main spirit
 
+app.MapGet("drinks/{MainSpirit}", (string MainSpirit) => drinks.FindAll(drink => drink.MainSpirit == MainSpirit));
 
 app.MapGet("/", () => "Hello World!");
 
