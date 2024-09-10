@@ -11,7 +11,7 @@ List<DrinkDto> drinks = [
     "Whiskey",
     "",
     ["Whiskey", "Simple Syrup"],
-    [2, 0.75],
+    [2, 0.75M],
     ["3 dashes of Angastora Bitters"],
     ["Orange Peel"],
     "Brown",
@@ -27,7 +27,7 @@ List<DrinkDto> drinks = [
     "Whiskey",
     "",
     ["Whiskey", "Coffee Liquer"],
-    [2, 0.5],
+    [2, 0.5M],
     ["2 dashes of Orange Bitters"],
     ["Orange Peel"],
     "Brown",
@@ -43,7 +43,7 @@ List<DrinkDto> drinks = [
     "Vodka",
     "",
     ["Vodka", "Lime Juice", "Ginger Beer"],
-    [2, 0.75, 8],
+    [2, 0.75M, 8],
     [""],
     ["Lime Wedge"],
     "White",
@@ -54,6 +54,9 @@ List<DrinkDto> drinks = [
     "Chill"
   )
 ];
+
+app.MapGet("drinks", () => drinks);
+
 
 app.MapGet("/", () => "Hello World!");
 
