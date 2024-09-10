@@ -60,13 +60,36 @@ List<DrinkDto> drinks = [
 app.MapGet("drinks", () => drinks);
 
 // Get specific drinks
-app.MapGet("drinks/{id}", (int id) => drinks.Find(drink => drink.Id == id));
+app.MapGet("drinks/{id}", (int id) => drinks.Find(drink => drink.Id == id))
+  .WithName("GetDrink");
 
 // Get all Drinks based on main spirit
 
 app.MapGet("drinks/ByAlcohol/{MainSpirit}", (string MainSpirit) => drinks.FindAll(drink => drink.MainSpirit == MainSpirit));
 
-// 
+// Post a new drink
+
+app.MapPost("drinks", (CreateDrinkDto newDrink) => {
+  DrinkDto drink = new(
+    drinks.Count + 1,
+    newDrink.Name,
+    newDrink.MainSpirit,
+    newDrink.Image,
+    newDrink.Ingredients,
+    newDrink.MeasurementsOz,
+    newDrink.Bitters,
+    newDrink.Garnish,
+    newDrink.Color,
+    newDrink.RecommendedGlasses,
+    newDrink.Notes,
+    newDrink.Method,
+    newDrink.Credit,
+    newDrink.Vibe
+  );
+  drinks.Add(drink);
+
+  return Results.CreatedAtRoute("GetDrink", new { id = drink.Id }, drink);
+});
 
 app.MapGet("/", () => "Hello World!");
 
