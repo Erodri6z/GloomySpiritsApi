@@ -1,6 +1,6 @@
 GET http://localhost:5047/drinks
 ###
-GET http://localhost:5047/drinks/2
+GET http://localhost:5047/drinks/1
 ###
 GET http://localhost:5047/drinks/ByAlcohol/Whiskey
 ###
@@ -21,4 +21,23 @@ Content-Type: application/json
   "method": ["Stirred"],
   "credit": "",
   "vibe": "Classic"
+}
+###
+PUT http://localhost:5047/drinks/2
+Content-Type: application/json
+
+{
+  "name": "Old Fashioned",
+  "mainSpirit": "Whiskey",
+  "image": "",
+  "ingredients": ["Whiskey", "Simple Syrup"],
+  "measurementsOz": [ 2, 0.75 ],
+  "bitters": [ "3 dashes of Angastora Bitters", "1 dash of Orange bitters" ],
+  "garnish": ["Orange Peel"],
+  "color": "Brown",
+  "recommendedGlasses": ["Rocks Glass"],
+  "notes": [""],
+  "method": ["Stirred", "Build-In-Glass"],
+  "credit": "James Bond",
+  "vibe": "Fancy"
 }
