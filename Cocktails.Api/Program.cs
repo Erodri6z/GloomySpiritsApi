@@ -117,6 +117,15 @@ app.MapPut("drinks/{id}", (int id, UpdateDrinkDto updatedDrink) =>
   return Results.NoContent();
 });
 
+// Delete a drink
+
+app.MapDelete("drinks/{id}", (int id) => 
+{
+  drinks.RemoveAll(drink => drink.Id == id);
+
+  return Results.NoContent();
+});
+
 app.MapGet("/", () => "Hello World!");
 
 app.Run();
