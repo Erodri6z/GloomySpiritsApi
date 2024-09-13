@@ -126,6 +126,6 @@ app.MapDelete("drinks/{id}", (int id) =>
   return Results.NoContent();
 });
 
-app.MapGet("/", () => "Hello World!");
+
 
 app.Run();
