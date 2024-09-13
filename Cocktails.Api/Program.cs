@@ -61,8 +61,13 @@ List<DrinkDto> drinks = [
 app.MapGet("drinks", () => drinks);
 
 // Get specific drinks
-app.MapGet("drinks/{id}", (int id) => drinks.Find(drink => drink.Id == id))
-  .WithName(GetDrinkEndPointName);
+app.MapGet("drinks/{id}", (int id) => 
+{
+  DrinkDto? drink = drinks.Find(drink => drink.Id == id);
+
+  return drink is null ? Results.NotFound() : Results.Ok(drinks);
+})
+.WithName(GetDrinkEndPointName);
 
 // Get all Drinks based on main spirit
 
