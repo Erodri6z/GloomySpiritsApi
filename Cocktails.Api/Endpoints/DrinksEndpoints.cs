@@ -75,7 +75,14 @@ public static class DrinksEndpoints
 
     // Get all Drinks based on main spirit
 
-    app.MapGet("drinks/ByAlcohol/{MainSpirit}", (string MainSpirit) => drinks.FindAll(drink => drink.MainSpirit == MainSpirit));
+    app.MapGet("drinks/ByAlcohol/{mainSpirit}", (string mainSpirit) =>
+    {
+      List <DrinkDto>? cocktails = drinks.FindAll(drink => drink.MainSpirit == mainSpirit);
+
+      return cocktails is null ? Results.NotFound(): Results.Ok(cocktails) ;
+      
+    })
+    .WithName(GetDrinkEndPointName);
 
     // Post a new drink
 
