@@ -69,7 +69,7 @@ public static class DrinksEndpoints
     {
       DrinkDto? drink = drinks.Find(drink => drink.Id == id);
 
-      return drink is null ? Results.NotFound() : Results.Ok(drinks);
+      return drink is null ? Results.NotFound() : Results.Ok(drink);
     })
     .WithName(GetDrinkEndPointName);
 
@@ -141,7 +141,7 @@ public static class DrinksEndpoints
 
       return Results.NoContent();
     });
-    
+
     return app;
   }
 }
