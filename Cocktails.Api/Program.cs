@@ -102,6 +102,13 @@ app.MapPost("drinks", (CreateDrinkDto newDrink) => {
 app.MapPut("drinks/{id}", (int id, UpdateDrinkDto updatedDrink) =>
 {
   var index = drinks.FindIndex(drink => drink.Id == id);
+
+  if ( index == -1)
+  {
+    // TODO : if not able to find, create it with payload
+    return Results.NotFound();
+  }
+
   drinks[index] = new DrinkDto(
     id,
     updatedDrink.Name,
