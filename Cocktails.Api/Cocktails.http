@@ -41,3 +41,6 @@ Content-Type: application/json
   "credit": "James Bond",
   "vibe": "Fancy"
 }
+
+### 
+DELETE http://localhost:5047/drinks/2
