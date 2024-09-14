@@ -57,14 +57,14 @@ public static class DrinksEndpoints
     "Chill"
   )];
 
-  public static WebApplication MapDrinksEndpoints(this WebApplication app)
+  public static RouteGroupBuilder MapDrinksEndpoints(this WebApplication app)
   {
 
     var group = app.MapGroup("drinks");
     
     // Get all Drinks
 
-    group.MapGet("drinks", () => drinks);
+    group.MapGet("/", () => drinks);
 
     // Get specific drinks
     group.MapGet("/{id}", (int id) => 
@@ -88,7 +88,7 @@ public static class DrinksEndpoints
 
     // Post a new drink
 
-    group.MapPost("drinks", (CreateDrinkDto newDrink) => {
+    group.MapPost("/", (CreateDrinkDto newDrink) => {
       DrinkDto drink = new(
         drinks.Count + 1,
         newDrink.Name,
@@ -151,6 +151,6 @@ public static class DrinksEndpoints
       return Results.NoContent();
     });
 
-    return app;
+    return group;
   }
 }
