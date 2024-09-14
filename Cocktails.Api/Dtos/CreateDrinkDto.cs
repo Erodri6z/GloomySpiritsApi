@@ -13,8 +13,8 @@ public record class CreateDrinkDto
   string[]? Garnish,
   [Required] string Color,
   [Required] string[] RecommendedGlasses,
-  string[]? Notes,
-  [Required]string[] Method,
+  string[] Notes,
+  [Required] string[] Method,
   string? Credit,
   [Required] string Vibe
 );

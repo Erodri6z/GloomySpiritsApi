@@ -77,14 +77,14 @@ public static class DrinksEndpoints
 
     // Get all Drinks based on main spirit
 
-    group.MapGet("/ByAlcohol/{mainSpirit}", (string mainSpirit) =>
-    {
-      List <DrinkDto>? cocktails = drinks.FindAll(drink => drink.MainSpirit == mainSpirit);
+    // group.MapGet("/ByAlcohol/{mainSpirit}", (string mainSpirit) =>
+    // {
+    //   List <DrinkDto>? cocktails = drinks.FindAll(drink => drink.MainSpirit == mainSpirit);
 
-      return cocktails is null ? Results.NotFound(): Results.Ok(cocktails) ;
+    //   return cocktails is null ? Results.NotFound(): Results.Ok(cocktails) ;
       
-    })
-    .WithName(GetDrinkEndPointName);
+    // })
+    // .WithName(GetDrinkEndPointName);
 
     // Post a new drink
 
@@ -108,7 +108,8 @@ public static class DrinksEndpoints
       drinks.Add(drink);
 
       return Results.CreatedAtRoute(GetDrinkEndPointName, new { id = drink.Id }, drink);
-    });
+    })
+    .WithParameterValidation();
 
     // Update a drink
 

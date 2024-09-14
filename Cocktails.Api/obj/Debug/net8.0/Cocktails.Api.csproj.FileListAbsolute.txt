@@ -24,3 +24,9 @@
 /home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/obj/Debug/net8.0/Cocktails.Api.pdb
 /home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/obj/Debug/net8.0/Cocktails.Api.genruntimeconfig.cache
 /home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/obj/Debug/net8.0/ref/Cocktails.Api.dll
+/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/MinimalApis.Extensions.dll
+/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/MiniValidation.dll
+/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/obj/Debug/net8.0/Cocktails.Api.csproj.AssemblyReference.cache
+/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/obj/Debug/net8.0/Cocktails.Api.MvcApplicationPartsAssemblyInfo.cs
+/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/obj/Debug/net8.0/Cocktails.Api.csproj.CopyComplete

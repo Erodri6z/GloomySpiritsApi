@@ -12,7 +12,7 @@ Content-Type: application/json
   "mainSpirit": "Gin",
   "image": "",
   "ingredients": ["Gin", "White Vermouth"],
-  "measurmentsOz": [2, 0.5],
+  "measurementsOz": [2, 0.5],
   "bitters": ["1 dash or Orange Bitters"],
   "garnish": ["An Olive", "A Lemon Peel"],
   "color": "Clear",
