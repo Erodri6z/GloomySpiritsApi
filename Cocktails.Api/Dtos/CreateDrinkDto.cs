@@ -1,18 +1,20 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Cocktails.Api.Dtos;
 
 public record class CreateDrinkDto
 (
-  string Name,
-  string MainSpirit,
+  [Required] string Name,
+  [Required] string MainSpirit,
   string? Image,
-  string[] Ingredients,
-  decimal[] MeasurementsOz,
+  [Required] string[] Ingredients,
+  [Required] decimal[] MeasurementsOz,
   string[]? Bitters,
   string[]? Garnish,
-  string Color,
-  string[] RecommendedGlasses,
-  string[] Notes,
-  string[] Method,
+  [Required] string Color,
+  [Required] string[] RecommendedGlasses,
+  string[]? Notes,
+  [Required]string[] Method,
   string? Credit,
-  string Vibe
+  [Required] string Vibe
 );

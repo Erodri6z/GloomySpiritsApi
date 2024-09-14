@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "s+uQpwT0mCVAu54LaN97ORANDdSKf1IgMGiCumAL281yVmQSlNVSB3i/TPXiz3mQNKWyIe9r1sh0MR+gA5lMrQ==",
+  "dgSpecHash": "5SX0Jkhu7ejNoC8QIcIotR7dS34ZRc7r7929L6cMbn0XyD6PDfrd7cvpUMPlfvfzuBgqcFk+aoZG1PKU/w4a5Q==",
   "success": true,
   "projectFilePath": "/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/Cocktails.Api.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/erik/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/home/erik/.nuget/packages/minimalapis.extensions/0.11.0/minimalapis.extensions.0.11.0.nupkg.sha512",
+    "/home/erik/.nuget/packages/minivalidation/0.8.0/minivalidation.0.8.0.nupkg.sha512"
+  ],
   "logs": []
 }
