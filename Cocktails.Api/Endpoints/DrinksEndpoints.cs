@@ -59,13 +59,15 @@ public static class DrinksEndpoints
 
   public static WebApplication MapDrinksEndpoints(this WebApplication app)
   {
+
+    var group = app.MapGroup("drinks");
     
     // Get all Drinks
 
-    app.MapGet("drinks", () => drinks);
+    group.MapGet("drinks", () => drinks);
 
     // Get specific drinks
-    app.MapGet("drinks/{id}", (int id) => 
+    group.MapGet("/{id}", (int id) => 
     {
       DrinkDto? drink = drinks.Find(drink => drink.Id == id);
 
@@ -75,7 +77,7 @@ public static class DrinksEndpoints
 
     // Get all Drinks based on main spirit
 
-    app.MapGet("drinks/ByAlcohol/{mainSpirit}", (string mainSpirit) =>
+    group.MapGet("/ByAlcohol/{mainSpirit}", (string mainSpirit) =>
     {
       List <DrinkDto>? cocktails = drinks.FindAll(drink => drink.MainSpirit == mainSpirit);
 
@@ -86,7 +88,7 @@ public static class DrinksEndpoints
 
     // Post a new drink
 
-    app.MapPost("drinks", (CreateDrinkDto newDrink) => {
+    group.MapPost("drinks", (CreateDrinkDto newDrink) => {
       DrinkDto drink = new(
         drinks.Count + 1,
         newDrink.Name,
@@ -110,7 +112,7 @@ public static class DrinksEndpoints
 
     // Update a drink
 
-    app.MapPut("drinks/{id}", (int id, UpdateDrinkDto updatedDrink) =>
+    group.MapPut("/{id}", (int id, UpdateDrinkDto updatedDrink) =>
     {
       var index = drinks.FindIndex(drink => drink.Id == id);
 
@@ -142,7 +144,7 @@ public static class DrinksEndpoints
 
     // Delete a drink
 
-    app.MapDelete("drinks/{id}", (int id) => 
+    group.MapDelete("/{id}", (int id) => 
     {
       drinks.RemoveAll(drink => drink.Id == id);
 
