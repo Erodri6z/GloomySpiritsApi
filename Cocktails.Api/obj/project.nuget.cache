@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wDVCtkOccjM9cQYl0tdv2iuKm+xJ+hcj+Y6bOZFwmPscBr2VxedtLyd8b63ENSrd+Xmm7wp+EfbgVU8gmMqUng==",
+  "dgSpecHash": "Y0N8l3Nh7rMdSkD5CuHOHsEu2Uo2m8Yk2I3jVBt7zKqYbEoGyfZ8h+65VNrqxTruol8j9l0OsOCYfAm7M/9HJw==",
   "success": true,
   "projectFilePath": "/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/Cocktails.Api.csproj",
   "expectedPackageFiles": [
