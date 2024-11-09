@@ -1,6 +1,7 @@
 using System;
 using Cocktails.Api.Dtos;
 
+
 namespace Cocktails.Api.Endpoints;
 
 public static class DrinksEndpoints
@@ -75,18 +76,6 @@ public static class DrinksEndpoints
     })
     .WithName(GetDrinkEndPointName);
 
-    // Get all Drinks based on main spirit
-
-    // group.MapGet("/ByAlcohol/{mainSpirit}", (string mainSpirit) =>
-    // {
-    //   List <DrinkDto>? cocktails = drinks.FindAll(drink => drink.MainSpirit == mainSpirit);
-
-    //   return cocktails is null ? Results.NotFound(): Results.Ok(cocktails) ;
-      
-    // })
-    // .WithName(GetDrinkEndPointName);
-
-    // Post a new drink
 
     group.MapPost("/", (CreateDrinkDto newDrink) => {
       DrinkDto drink = new(
