@@ -8,11 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 Env.Load();
 
-var app = builder.Build();
 
 builder.Configuration.AddEnvironmentVariables();
 
 builder.Services.AddSingleton<MongoDbContext>();
+
+var app = builder.Build();
 
 app.MapDrinksEndpoints();
 

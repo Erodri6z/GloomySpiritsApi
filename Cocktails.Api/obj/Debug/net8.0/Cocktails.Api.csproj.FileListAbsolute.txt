@@ -30,3 +30,11 @@
 /home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/obj/Debug/net8.0/Cocktails.Api.csproj.AssemblyReference.cache
 /home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/obj/Debug/net8.0/Cocktails.Api.MvcApplicationPartsAssemblyInfo.cs
 /home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/obj/Debug/net8.0/Cocktails.Api.csproj.CopyComplete
+/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/DnsClient.dll
+/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/DotNetEnv.dll
+/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/MongoDB.Bson.dll
+/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/MongoDB.Driver.dll
+/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/SharpCompress.dll
+/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/Snappier.dll
+/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/Sprache.dll
+/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/ZstdSharp.dll
