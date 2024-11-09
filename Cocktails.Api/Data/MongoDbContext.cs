@@ -1,5 +1,7 @@
 using MongoDB.Driver;
 
+namespace Cocktails.Api.Data;
+
 public class MongoDbContext
 {
 

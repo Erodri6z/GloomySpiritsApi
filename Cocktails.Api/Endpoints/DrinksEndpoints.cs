@@ -2,6 +2,7 @@ using System;
 using Cocktails.Api.Dtos;
 
 
+
 namespace Cocktails.Api.Endpoints;
 
 public static class DrinksEndpoints
