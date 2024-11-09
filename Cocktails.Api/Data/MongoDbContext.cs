@@ -1,3 +1,4 @@
+using Cocktails.Api.Dtos;
 using MongoDB.Driver;
 
 namespace Cocktails.Api.Data;
@@ -17,8 +18,5 @@ private readonly IMongoDatabase _database;
 
   }
 
-  public IMongoCollection<T> GetCollection<T>(string name)
-  {
-    return _database.GetCollection<T>(name);
-  }
+  public IMongoCollection<DrinkDto> Drinks => _database.GetCollection<DrinkDto>("Drinks");
 }
