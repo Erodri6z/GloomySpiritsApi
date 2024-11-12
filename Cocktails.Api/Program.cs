@@ -3,13 +3,14 @@ using Cocktails.Api.Data;
 using Cocktails.Api.Endpoints;
 using DotNetEnv;
 
-var builder = WebApplication.CreateBuilder(args);
-
-
 Env.Load();
 
+var builder = WebApplication.CreateBuilder(args);
 
-builder.Configuration.AddEnvironmentVariables();
+var mongoConnectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
+
+
+Console.WriteLine(mongoConnectionString);
 
 builder.Services.AddSingleton<MongoDbContext>();
 

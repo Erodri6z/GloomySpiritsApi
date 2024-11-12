@@ -1,3 +1,4 @@
+using System;
 using Cocktails.Api.Dtos;
 using MongoDB.Driver;
 
@@ -10,8 +11,9 @@ private readonly IMongoDatabase _database;
 
   public MongoDbContext() 
   {
-    var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
-    var databaseName = Environment.GetEnvironmentVariable("DATABASE_URL");
+    var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING") 
+    ?? throw new ArgumentNullException("Connection string not found in mongodb context");
+    var databaseName = Environment.GetEnvironmentVariable("DATABASE_NAME");
 
     var client = new MongoClient(connectionString);
     _database = client.GetDatabase(databaseName);
