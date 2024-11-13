@@ -70,7 +70,7 @@ public static class DrinksEndpoints
     
     // Get all Drinks
 
-    group.MapGet("/", async ([FromServices] Data.MongoDbContext context) => 
+    group.MapGet("/", async ([FromServices] MongoDbContext context) => 
     {
       Console.WriteLine("this works");
       return await context.Drinks.Find(_ => true).ToListAsync();
