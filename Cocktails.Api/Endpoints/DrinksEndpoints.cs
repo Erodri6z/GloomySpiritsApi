@@ -1,4 +1,6 @@
 // using System;
+using System.Diagnostics.Metrics;
+using System.Reflection;
 using Cocktails.Api.Data;
 using Cocktails.Api.Dtos;
 using Microsoft.AspNetCore.Mvc;
@@ -94,28 +96,46 @@ public static class DrinksEndpoints
     .WithName(GetDrinkEndPointName);
 
 
-    // group.MapPost("/", (CreateDrinkDto newDrink) => {
-    //   DrinkDto drink = new(
-    //     drinks.Count + 1,
-    //     newDrink.Name,
-    //     newDrink.MainSpirit,
-    //     newDrink.Image,
-    //     newDrink.Ingredients,
-    //     newDrink.MeasurementsOz,
-    //     newDrink.Bitters,
-    //     newDrink.Garnish,
-    //     newDrink.Color,
-    //     newDrink.RecommendedGlasses,
-    //     newDrink.Notes,
-    //     newDrink.Method,
-    //     newDrink.Credit,
-    //     newDrink.Vibe
-    //   );
-    //   drinks.Add(drink);
+    group.MapPost("/", async ([FromServices] MongoDbContext context, CreateDrinkDto newDrink) => 
+    {
+      // DrinkDto drink = new(
+      //   drinks.Count + 1,
+      //   newDrink.Name,
+      //   newDrink.MainSpirit,
+      //   newDrink.Image,
+      //   newDrink.Ingredients,
+      //   newDrink.MeasurementsOz,
+      //   newDrink.Bitters,
+      //   newDrink.Garnish,
+      //   newDrink.Color,
+      //   newDrink.RecommendedGlasses,
+      //   newDrink.Notes,
+      //   newDrink.Method,
+      //   newDrink.Credit,
+      //   newDrink.Vibe
+      // );
 
-    //   return Results.CreatedAtRoute(GetDrinkEndPointName, new { id = drink.Id }, drink);
-    // })
-    // .WithParameterValidation();
+      DrinkDto drink = new DrinkDto 
+      {
+        Name = newDrink.Name,
+        MainSpirit = newDrink.MainSpirit,
+        Image = newDrink.Image,
+        MeasurementsOz = newDrink.MeasurementsOz,
+        Bitters = newDrink.Bitters,
+        Garnish = newDrink.Garnish,
+        Color = newDrink.Color,
+        RecommendedGlasses = newDrink.RecommendedGlasses,
+        Notes = newDrink.Notes,
+        Method = newDrink.Method,
+        Credit = newDrink.Credit,
+        Vibe = newDrink.Vibe
+      };
+
+      await context.Drinks.InsertOneAsync(drink) ;
+
+      return Results.CreatedAtRoute(GetDrinkEndPointName, new { id = drink.Id }, drink);
+    })
+    .WithParameterValidation();
 
     // // Update a drink
 
