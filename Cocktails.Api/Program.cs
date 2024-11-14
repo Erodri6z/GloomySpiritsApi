@@ -9,9 +9,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 var mongoConnectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
 
-
-Console.WriteLine(mongoConnectionString);
-
 builder.Services.AddSingleton<MongoDbContext>();
 
 var app = builder.Build();
