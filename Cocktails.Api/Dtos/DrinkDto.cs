@@ -8,9 +8,9 @@ namespace Cocktails.Api.Dtos;
 
 public record class DrinkDto
 {
-    [BsonId] // This attribute marks the field as the primary key
+    [BsonId] 
     [BsonRepresentation(BsonType.ObjectId)]
-    public string? Id { get; set; } // MongoDB generates this automatically if null
+    public string? Id { get; set; } 
 
     [Required] public string Name { get; set; } = string.Empty;
     [Required] public string MainSpirit { get; set; } = string.Empty;

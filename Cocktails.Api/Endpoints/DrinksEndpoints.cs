@@ -116,11 +116,11 @@ public static class DrinksEndpoints
 
       DrinkDto drink = new DrinkDto 
       {
-        newId,
         Name = newDrink.Name,
         MainSpirit = newDrink.MainSpirit,
         Image = newDrink.Image,
-        MeasurementsOz = newDrink.MeasurementsOz.ToArray(),
+        Ingredients = newDrink.Ingredients,
+        MeasurementsOz = newDrink.MeasurementsOz,
         Bitters = newDrink.Bitters,
         Garnish = newDrink.Garnish,
         Color = newDrink.Color,
@@ -133,7 +133,7 @@ public static class DrinksEndpoints
 
       await context.Drinks.InsertOneAsync(drink) ;
 
-      return Results.CreatedAtRoute(GetDrinkEndPointName, new { id = drink.Id }, drink);
+    return Results.Created($"/drinks/{drink.Id}", drink);
     })
     .WithParameterValidation();
 
