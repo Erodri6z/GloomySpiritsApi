@@ -80,20 +80,19 @@ public static class DrinksEndpoints
 
     // commented out until I figure out what I am doing wrong
 
-    // // Get specific drinks
-    group.MapGet("/{id}", ([FromServices] MongoDbContext context, int id) => 
-    {
-      // DrinkDto? drink = context.Drinks.Find(drink => drink.Id == id);\
-      var filter = Builders<DrinkDto>.Filter.Eq(drinks => drinks.Id, id);
-      var drink = await context.Drinks.Find(filter).FirstOrDefaultAsync();
+    // Get specific drinks
+    // group.MapGet("/{id}", async (int id, MongoDbContext context) => 
+    // {
+    //   // DrinkDto? drink = context.Drinks.Find(drink => drink.Id == id);\
+    //   var filter = Builders<DrinkDto>.Filter.Eq(drinks => drinks.Id, id);
+    //   var drink = await context.Drinks.Find(filter).FirstOrDefaultAsync();
 
-      return drink is null ? Results.NotFound: Results.Ok(drink);
+    //   return drink is null ? Results.NotFound: Results.Ok(drink);
 
-      // return drink is null ? Results.NotFound() : Results.Ok(drink);
+    //   // return drink is null ? Results.NotFound() : Results.Ok(drink);
 
-
-    })
-    .WithName(GetDrinkEndPointName);
+    // })
+    // .WithName(GetDrinkEndPointName);
 
 
     group.MapPost("/", async ([FromServices] MongoDbContext context, CreateDrinkDto newDrink) => 
@@ -117,10 +116,11 @@ public static class DrinksEndpoints
 
       DrinkDto drink = new DrinkDto 
       {
+        newId,
         Name = newDrink.Name,
         MainSpirit = newDrink.MainSpirit,
         Image = newDrink.Image,
-        MeasurementsOz = newDrink.MeasurementsOz,
+        MeasurementsOz = newDrink.MeasurementsOz.ToArray(),
         Bitters = newDrink.Bitters,
         Garnish = newDrink.Garnish,
         Color = newDrink.Color,
