@@ -81,18 +81,15 @@ public static class DrinksEndpoints
     // commented out until I figure out what I am doing wrong
 
     // Get specific drinks
-    // group.MapGet("/{id}", async (int id, MongoDbContext context) => 
-    // {
-    //   // DrinkDto? drink = context.Drinks.Find(drink => drink.Id == id);\
-    //   var filter = Builders<DrinkDto>.Filter.Eq(drinks => drinks.Id, id);
-    //   var drink = await context.Drinks.Find(filter).FirstOrDefaultAsync();
+    group.MapGet("/{id}", async ([FromService] MongoDbContext context, int id) => 
+    {
+      var filter = Builders<DrinkDto>.Filter.Eq(drink => drink.Id, id);
+      var drink = await context.Drinks.Find(filter).FirstOrDefaultAsync();
 
-    //   return drink is null ? Results.NotFound: Results.Ok(drink);
+      return drink is null ? Results.NotFound: Results.Ok(drink);
 
-    //   // return drink is null ? Results.NotFound() : Results.Ok(drink);
-
-    // })
-    // .WithName(GetDrinkEndPointName);
+    })
+    .WithName(GetDrinkEndPointName);
 
 
     group.MapPost("/", async ([FromServices] MongoDbContext context, CreateDrinkDto newDrink) => 
