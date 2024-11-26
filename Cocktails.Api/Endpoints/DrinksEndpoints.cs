@@ -15,56 +15,6 @@ public static class DrinksEndpoints
 {
   const string GetDrinkEndPointName = "GetDrink";
 
-  // private static readonly List<DrinkDto> drinks = [
-  // new (
-  //   1,
-  //   "Old Fashioned",
-  //   "Whiskey",
-  //   "",
-  //   ["Whiskey", "Simple Syrup"],
-  //   [2, 0.75M],
-  //   ["3 dashes of Angastora Bitters"],
-  //   ["Orange Peel"],
-  //   "Brown",
-  //   ["Rocks Glass"],
-  //   [""],
-  //   ["Stirred", "Build-In-Glass"],
-  //   "",
-  //   "Fancy"
-  // ),
-  // new (
-  //   2,
-  //   "Revolver",
-  //   "Whiskey",
-  //   "",
-  //   ["Whiskey", "Coffee Liquer"],
-  //   [2, 0.5M],
-  //   ["2 dashes of Orange Bitters"],
-  //   ["Orange Peel"],
-  //   "Brown",
-  //   ["Coupe Glass", "Martini Glass"],
-  //   [""],
-  //   ["Stirred"],
-  //   "",
-  //   "Fancy"
-  // ),
-  // new (
-  //   3,
-  //   "Moscow Mule",
-  //   "Vodka",
-  //   "",
-  //   ["Vodka", "Lime Juice", "Ginger Beer"],
-  //   [2, 0.75M, 8],
-  //   [""],
-  //   ["Lime Wedge"],
-  //   "White",
-  //   ["Copper Mug", "High Ball Glass"],
-  //   [""],
-  //   ["Shaken", "Stirred"],
-  //   "",
-  //   "Chill"
-  // )];
-
   public static RouteGroupBuilder MapDrinksEndpoints(this WebApplication app)
   {
 
@@ -78,9 +28,7 @@ public static class DrinksEndpoints
       return await context.Drinks.Find(_ => true).ToListAsync();
     });
 
-    // commented out until I figure out what I am doing wrong
-
-    // Get specific drinks
+    // Get specific drinks details
     group.MapGet("/{id}", async (string id,  MongoDbContext context) => 
     {
       var filter = Builders<DrinkDto>.Filter.Eq(drink => drink.Id, id);
@@ -92,24 +40,19 @@ public static class DrinksEndpoints
     .WithName(GetDrinkEndPointName);
 
 
+    //TODO: Find Drink By Spirit
+
+
+
+    //TODO: Find Drink By name
+
+
+    //TODO: Find Drink By Vibe 
+
+    // Create a drink
+    // TODO: find a way to create images with cloudary
     group.MapPost("/", async ([FromServices] MongoDbContext context, CreateDrinkDto newDrink) => 
     {
-      // DrinkDto drink = new(
-      //   drinks.Count + 1,
-      //   newDrink.Name,
-      //   newDrink.MainSpirit,
-      //   newDrink.Image,
-      //   newDrink.Ingredients,
-      //   newDrink.MeasurementsOz,
-      //   newDrink.Bitters,
-      //   newDrink.Garnish,
-      //   newDrink.Color,
-      //   newDrink.RecommendedGlasses,
-      //   newDrink.Notes,
-      //   newDrink.Method,
-      //   newDrink.Credit,
-      //   newDrink.Vibe
-      // );
 
       DrinkDto drink = new DrinkDto 
       {
