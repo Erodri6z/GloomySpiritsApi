@@ -10,7 +10,8 @@ public record class DrinkDto
 {
     [BsonId] 
     [BsonRepresentation(BsonType.ObjectId)]
-    public int Id { get; set; } 
+    public string Id { get; set; } 
+    
 
     [Required] public string Name { get; set; } = string.Empty;
     [Required] public string MainSpirit { get; set; } = string.Empty;

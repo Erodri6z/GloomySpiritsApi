@@ -81,7 +81,7 @@ public static class DrinksEndpoints
     // commented out until I figure out what I am doing wrong
 
     // Get specific drinks
-    group.MapGet("/{id}", async ( MongoDbContext context, int id) => 
+    group.MapGet("/{id}", async (string id,  MongoDbContext context) => 
     {
       var filter = Builders<DrinkDto>.Filter.Eq(drink => drink.Id, id);
       var drink = await context.Drinks.Find(filter).FirstOrDefaultAsync();
