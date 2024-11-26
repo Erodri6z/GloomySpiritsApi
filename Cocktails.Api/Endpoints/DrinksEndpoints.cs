@@ -187,12 +187,12 @@ public static class DrinksEndpoints
 
     // // Delete a drink
 
-    // group.MapDelete("/{id}", (int id) => 
-    // {
-    //   drinks.RemoveAll(drink => drink.Id == id);
+    group.MapDelete("/{id}", (string id, MongoDbContext context) => 
+    {
+      context.Drinks.DeleteOne(drink => drink.Id == id);
 
-    //   return Results.NoContent();
-    // });
+      return Results.NoContent();
+    });
 
     return group;
   }
