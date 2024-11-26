@@ -23,7 +23,7 @@ Content-Type: application/json
   "vibe": "Classic"
 }
 ###
-PUT http://localhost:5047/drinks/6737a835c027c4a169777485
+PUT http://localhost:5047/drinks/6737a835c027c4a169777483
 Content-Type: application/json
 
 {
@@ -33,7 +33,7 @@ Content-Type: application/json
   "ingredients": ["Whiskey", "Simple Syrup"],
   "measurementsOz": [ 2, 0.75 ],
   "bitters": [ "3 dashes of Angastora Bitters", "1 dash of Orange bitters" ],
-  "garnish": ["Orange Peel"],
+  "garnish": ["Orange Peel", "Lemon Peel"],
   "color": "Brown",
   "recommendedGlasses": ["Rocks Glass"],
   "notes": [""],

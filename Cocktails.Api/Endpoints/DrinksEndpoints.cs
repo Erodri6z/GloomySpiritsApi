@@ -138,9 +138,32 @@ public static class DrinksEndpoints
 
     group.MapPut("/{id}", async (string id, UpdateDrinkDto updatedDrink, MongoDbContext context) =>
     {
-
       var filter = Builders<DrinkDto>.Filter.Eq(drink => drink.Id, id);
-      // var existingDrink = await context.Drinks.Find(filter).FirstOrDefaultAsync();
+      var existingDrink = await context.Drinks.Find(filter).FirstOrDefaultAsync();
+
+      if (existingDrink is null) {
+
+      DrinkDto drink = new DrinkDto 
+      {
+        Id = id,
+        Name = updatedDrink.Name,
+        MainSpirit = updatedDrink.MainSpirit,
+        Image = updatedDrink.Image,
+        Ingredients = updatedDrink.Ingredients,
+        MeasurementsOz = updatedDrink.MeasurementsOz,
+        Bitters = updatedDrink.Bitters,
+        Garnish = updatedDrink.Garnish,
+        Color = updatedDrink.Color,
+        RecommendedGlasses = updatedDrink.RecommendedGlasses,
+        Notes = updatedDrink.Notes,
+        Method = updatedDrink.Method,
+        Credit = updatedDrink.Credit,
+        Vibe = updatedDrink.Vibe
+      };
+
+      await context.Drinks.InsertOneAsync(drink) ;
+      return Results.Created($"/drinks/{id}", drink);
+      }
 
       var update = Builders<DrinkDto>.Update
         .Set(d => d.Name, updatedDrink.Name)
