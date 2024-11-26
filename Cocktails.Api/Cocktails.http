@@ -23,7 +23,7 @@ Content-Type: application/json
   "vibe": "Classic"
 }
 ###
-PUT http://localhost:5047/drinks/2
+PUT http://localhost:5047/drinks/6737a835c027c4a169777485
 Content-Type: application/json
 
 {

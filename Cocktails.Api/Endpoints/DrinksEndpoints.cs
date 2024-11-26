@@ -136,35 +136,31 @@ public static class DrinksEndpoints
 
     // // Update a drink
 
-    // group.MapPut("/{id}", (int id, UpdateDrinkDto updatedDrink) =>
-    // {
-    //   var index = drinks.FindIndex(drink => drink.Id == id);
+    group.MapPut("/{id}", async (string id, UpdateDrinkDto updatedDrink, MongoDbContext context) =>
+    {
 
-    //   if ( index == -1)
-    //   {
-    //     // TODO : if not able to find, create it with payload
-    //     return Results.NotFound();
-    //   }
+      var filter = Builders<DrinkDto>.Filter.Eq(drink => drink.Id, id);
+      // var existingDrink = await context.Drinks.Find(filter).FirstOrDefaultAsync();
 
-    //   drinks[index] = new DrinkDto(
-    //     id,
-    //     updatedDrink.Name,
-    //     updatedDrink.MainSpirit,
-    //     updatedDrink.Image,
-    //     updatedDrink.Ingredients,
-    //     updatedDrink.MeasurementsOz,
-    //     updatedDrink.Bitters,
-    //     updatedDrink.Garnish,
-    //     updatedDrink.Color,
-    //     updatedDrink.RecommendedGlasses,
-    //     updatedDrink.Notes,
-    //     updatedDrink.Method,
-    //     updatedDrink.Credit,
-    //     updatedDrink.Vibe
-    //   );
+      var update = Builders<DrinkDto>.Update
+        .Set(d => d.Name, updatedDrink.Name)
+        .Set(d => d.MainSpirit, updatedDrink.MainSpirit)
+        .Set(d => d.Image, updatedDrink.Image)
+        .Set(d => d.Ingredients, updatedDrink.Ingredients)
+        .Set(d => d.MeasurementsOz, updatedDrink.MeasurementsOz)
+        .Set(d => d.Bitters, updatedDrink.Bitters)
+        .Set(d => d.Garnish, updatedDrink.Garnish)
+        .Set(d => d.Color, updatedDrink.Color)
+        .Set(d => d.RecommendedGlasses, updatedDrink.RecommendedGlasses)
+        .Set(d => d.Notes, updatedDrink.Notes)
+        .Set(d => d.Method, updatedDrink.Method)
+        .Set(d => d.Credit, updatedDrink.Credit)
+        .Set(d => d.Vibe, updatedDrink.Vibe);
 
-    //   return Results.NoContent();
-    // });
+      await context.Drinks.UpdateOneAsync(filter, update);
+
+      return Results.NoContent();
+    });
 
     // // Delete a drink
 
