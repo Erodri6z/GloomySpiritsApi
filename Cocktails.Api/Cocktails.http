@@ -3,6 +3,8 @@ GET http://localhost:5047/drinks
 GET http://localhost:5047/drinks/6737a835c027c4a169777485
 ###
 GET http://localhost:5047/drinks/ByAlcohol/Whiskey
+
+
 ###
 POST http://localhost:5047/drinks 
 Content-Type: application/json

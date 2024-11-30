@@ -4,6 +4,7 @@ using System.Reflection;
 using Cocktails.Api.Data;
 using Cocktails.Api.Dtos;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 
@@ -50,7 +51,13 @@ public static class DrinksEndpoints
 
 
     //TODO: Find Drink By name
+    group.MapGet("/byName/{name}", async (string name, MongoDbContext context) => 
+    {
+      var filter = Builders<DrinkDto>.Filter.Regex(drink => drink.Name, new BsonRegularExpression(name, "i"));
+      var drinks = await context.Drinks.Find(filter).ToListAsync();
 
+      return drinks.Any() ? Results.NotFound() : Results.Ok(drinks);
+    });
 
     //TODO: Find Drink By Vibe 
 
