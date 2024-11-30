@@ -41,7 +41,12 @@ public static class DrinksEndpoints
 
 
     //TODO: Find Drink By Spirit
-
+    group.MapGet("/byAlcohol/{spirit}", async (string spirit, MongoDbContext context) => 
+    {
+      var filter = Builders<DrinkDto>.Filter.Eq(drink => drink.MainSpirit, spirit);
+      var drink = await context.Drinks.Find(filter).FirstOrDefaultAsync();
+      return drink is null ? Results.NotFound() : Results.Ok(drink);
+    });
 
 
     //TODO: Find Drink By name
