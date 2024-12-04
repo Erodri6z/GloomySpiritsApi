@@ -46,7 +46,7 @@ public static class DrinksEndpoints
     {
       var filter = Builders<DrinkDto>.Filter.Eq(drink => drink.MainSpirit, spirit);
       var drinks = await context.Drinks.Find(filter).ToListAsync();
-      return drinks.Any() ? Results.NotFound() : Results.Ok(drinks);
+      return drinks.Any() ? Results.Ok(drinks) : Results.NotFound();
     });
 
 
