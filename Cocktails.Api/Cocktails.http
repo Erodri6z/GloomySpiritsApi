@@ -2,27 +2,27 @@ GET http://localhost:5047/drinks
 ###
 GET http://localhost:5047/drinks/6737a835c027c4a169777485
 ###
-GET http://localhost:5047/drinks/ByAlcohol/Whiskey
-
-
+GET http://localhost:5047/drinks/byAlcohol/vodka
+###
+GET http://localhost:5047/drinks/byName/Martini 
 ###
 POST http://localhost:5047/drinks 
 Content-Type: application/json
 
 {
-  "name": "Martini",
-  "mainSpirit": "Gin",
+  "name": "Espresso Martini",
+  "mainSpirit": "Vodka",
   "image": "",
-  "ingredients": ["Gin", "White Vermouth"],
-  "measurementsOz": [2, 0.5],
-  "bitters": ["1 dash or Orange Bitters"],
-  "garnish": ["An Olive", "A Lemon Peel"],
-  "color": "Clear",
+  "ingredients": ["Vodka", "Espresso", "Coffee Liqueur", "Simple Syrup"],
+  "measurementsOz": [2, 1, 1, 0.5],
+  "bitters": [],
+  "garnish": ["3 Coffee Beans"],
+  "color": "Black",
   "recommendedGlasses": ["Martini Glass", "Coupe Glass"],
-  "notes": ["007 doesnt know how martinis work"],
-  "method": ["Stirred"],
+  "notes": ["Nothing says depressed and anxious like a espresso"],
+  "method": ["Shaken"],
   "credit": "",
-  "vibe": "Classic"
+  "vibe": "Modern Classic"
 }
 ###
 PUT http://localhost:5047/drinks/6737a835c027c4a169777483

@@ -56,7 +56,7 @@ public static class DrinksEndpoints
       var filter = Builders<DrinkDto>.Filter.Regex(drink => drink.Name, new BsonRegularExpression(name, "i"));
       var drinks = await context.Drinks.Find(filter).ToListAsync();
 
-      return drinks.Any() ? Results.NotFound() : Results.Ok(drinks);
+      return drinks.Any() ?  Results.Ok(drinks) : Results.NotFound();
     });
 
     //TODO: Find Drink By Vibe 
