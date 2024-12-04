@@ -41,7 +41,7 @@ public static class DrinksEndpoints
     .WithName(GetDrinkEndPointName);
 
 
-    //TODO: Find Drink By Spirit
+    // Find Drink By Spirit
     group.MapGet("/byAlcohol/{spirit}", async (string spirit, MongoDbContext context) => 
     {
       var filter = Builders<DrinkDto>.Filter.Eq(drink => drink.MainSpirit, spirit);
@@ -50,7 +50,7 @@ public static class DrinksEndpoints
     });
 
 
-    //TODO: Find Drink By name
+    // Find Drink By name
     group.MapGet("/byName/{name}", async (string name, MongoDbContext context) => 
     {
       var filter = Builders<DrinkDto>.Filter.Regex(drink => drink.Name, new BsonRegularExpression(name, "i"));
@@ -60,6 +60,13 @@ public static class DrinksEndpoints
     });
 
     //TODO: Find Drink By Vibe 
+    group.MapGet("/byVibe/{vibe}", async (string vibe, MongoDbContext context) => 
+    {
+      var filter = Builders<DrinkDto>.Filter.Eq(drink => drink.Vibe, vibe);
+      var drinks = await context.Drinks.Find(filter).ToListAsync();
+
+      return drinks.Any() ? Results.Ok(drinks) : Results.NotFound();
+    });
 
     // Create a drink
     // TODO: find a way to create images with cloudary

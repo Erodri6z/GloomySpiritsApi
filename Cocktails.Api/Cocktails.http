@@ -6,6 +6,9 @@ GET http://localhost:5047/drinks/byAlcohol/Vodka
 ###
 GET http://localhost:5047/drinks/byName/Martini 
 ###
+GET http://localhost:5047/drinks/byVibe/Fancy 
+
+###
 POST http://localhost:5047/drinks 
 Content-Type: application/json
 
