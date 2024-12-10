@@ -5342,11 +5342,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/Cocktails.Api.csproj",
+      "projectUniqueName": "/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/Cocktails.Api.csproj",
       "projectName": "Cocktails.Api",
-      "projectPath": "/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/Cocktails.Api.csproj",
+      "projectPath": "/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/Cocktails.Api.csproj",
       "packagesPath": "/home/erik/.nuget/packages/",
-      "outputPath": "/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/obj/",
+      "outputPath": "/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/erik/.nuget/NuGet/NuGet.Config"

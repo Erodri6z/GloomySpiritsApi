@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "600wY1oJvcYg92I1TqhlW7znImILHLMB5cwqSVgQuHdeBUGNyMyJjTgr2wxsUEjXxJJyOOkKRPEXqXHEZ2Pquw==",
+  "dgSpecHash": "HNajrjkfE+t71VIrv+8JCigil9fQZstUXNRzP3VPWqbQKnxkcX8O9uVSbqu4XxpV9ALmneP3wW+Y5Ld5hgtP6Q==",
   "success": true,
-  "projectFilePath": "/home/erik/code/personal-projects/cocktail-backend-C#/Cocktails.Api/Cocktails.Api.csproj",
+  "projectFilePath": "/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/Cocktails.Api.csproj",
   "expectedPackageFiles": [
     "/home/erik/.nuget/packages/dnsclient/1.6.1/dnsclient.1.6.1.nupkg.sha512",
     "/home/erik/.nuget/packages/dotnetenv/3.1.1/dotnetenv.3.1.1.nupkg.sha512",
