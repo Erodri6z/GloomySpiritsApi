@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "HNajrjkfE+t71VIrv+8JCigil9fQZstUXNRzP3VPWqbQKnxkcX8O9uVSbqu4XxpV9ALmneP3wW+Y5Ld5hgtP6Q==",
+  "dgSpecHash": "cFcT6uDI6enCi3Z4VDYgJPZJhsd6XtR12gfRDeb8kSI9NI8e3JwUO+pu5oFRy3QIlwfvGqxlPN16emalMb/06g==",
   "success": true,
   "projectFilePath": "/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/Cocktails.Api.csproj",
   "expectedPackageFiles": [
+    "/home/erik/.nuget/packages/cloudinarydotnet/1.26.2/cloudinarydotnet.1.26.2.nupkg.sha512",
     "/home/erik/.nuget/packages/dnsclient/1.6.1/dnsclient.1.6.1.nupkg.sha512",
     "/home/erik/.nuget/packages/dotnetenv/3.1.1/dotnetenv.3.1.1.nupkg.sha512",
     "/home/erik/.nuget/packages/microsoft.extensions.configuration/1.1.2/microsoft.extensions.configuration.1.1.2.nupkg.sha512",
@@ -20,6 +21,7 @@
     "/home/erik/.nuget/packages/mongodb.bson/3.0.0/mongodb.bson.3.0.0.nupkg.sha512",
     "/home/erik/.nuget/packages/mongodb.driver/3.0.0/mongodb.driver.3.0.0.nupkg.sha512",
     "/home/erik/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
+    "/home/erik/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
     "/home/erik/.nuget/packages/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl/4.3.2/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "/home/erik/.nuget/packages/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl/4.3.2/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "/home/erik/.nuget/packages/runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl/4.3.2/runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
