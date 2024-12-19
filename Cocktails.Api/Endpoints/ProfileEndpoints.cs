@@ -6,5 +6,10 @@ namespace Cocktails.Api.Endpoints;
 
 public static class ProfileEndpoints
 {
-  const string ProfileEndpointName = "GetProfile";
+  public static RouteGroupBuilder MapAuthEndpoints( this webApplications app)
+  {
+    var group = MapGroup("auth"); 
+    
+  }
+
 }
