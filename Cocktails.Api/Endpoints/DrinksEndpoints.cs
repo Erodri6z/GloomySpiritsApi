@@ -2,7 +2,7 @@
 using System.Diagnostics.Metrics;
 using System.Reflection;
 using Cocktails.Api.Data;
-using Cocktails.Api.Dtos;
+using Cocktails.Api.Dtos.Drinks;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -14,7 +14,7 @@ namespace Cocktails.Api.Endpoints;
 
 public static class DrinksEndpoints
 {
-  const string GetDrinkEndPointName = "GetDrink";
+  const string GetDrinkEndPointName = "GetDrink";                                                 
 
   public static RouteGroupBuilder MapDrinksEndpoints(this WebApplication app)
   {
