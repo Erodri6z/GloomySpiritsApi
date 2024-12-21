@@ -2,7 +2,7 @@
 using System.Diagnostics.Metrics;
 using System.Reflection;
 using Cocktails.Api.Data;
-using Cocktails.Api.Dtos.Drinks;
+using Cocktails.Api.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using MongoDB.Driver;

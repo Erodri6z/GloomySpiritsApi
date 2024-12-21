@@ -18,7 +18,7 @@ Content-Type: application/json
   "image": "",
   "ingredients": ["Vodka", "Espresso", "Coffee Liqueur", "Simple Syrup"],
   "measurementsOz": [2, 1, 1, 0.5],
-  "bitters": [],
+  "bitters": ["3 dashes of Cocoa Bitters"],
   "garnish": ["3 Coffee Beans"],
   "color": "Black",
   "recommendedGlasses": ["Martini Glass", "Coupe Glass"],
