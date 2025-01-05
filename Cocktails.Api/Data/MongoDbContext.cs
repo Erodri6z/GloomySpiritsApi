@@ -21,4 +21,6 @@ private readonly IMongoDatabase _database;
   }
 
   public IMongoCollection<DrinkDto> Drinks => _database.GetCollection<DrinkDto>("Drinks");
+
+  public IMongoCollection<ProfileDto> Profiles => _database.GetCollection<ProfileDto>("Profiles");
 }
