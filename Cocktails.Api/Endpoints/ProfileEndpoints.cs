@@ -6,15 +6,11 @@ namespace Cocktails.Api.Endpoints;
 
 public static class ProfileEndpoints
 {
-  public static RouteGroupBuilder MapAuthEndpoints(this webApplications app)
+  public static RouteGroupBuilder MapProfilesEndpoints(this WebApplication app)
   {
-    var group = MapGroup("auth"); 
+    var group = app.MapGroup("profiles");
 
-    public async Task CreateProfileAsync(ProfileDto profile)
-    {
-      await _profilesCollection.InsertOneAsync(profile)
-    }
-    
+    return group;
   }
 
 }
