@@ -15,6 +15,13 @@ public static class ProfileEndpoints
   {
     var group = app.MapGroup("profiles");
 
+    group.MapGet("/{id}", async (int id, [FromServices] MongoDbContext context) => 
+    {
+      var filter = Builders<ProfileDto>.Filter.Eq(profile => profile.Id, id);
+      var profile = await context.Profiles.Find(filter).FirstOrDefaultAsync();
+
+    });
+
     group.MapPost("/", async ([FromServices] MongoDbContext context, ProfileDto profile) => 
     {
       ProfileDto profile = new ProfileDto
