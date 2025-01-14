@@ -22,7 +22,7 @@ public static class ProfileEndpoints
 
     });
 
-    group.MapPost("/", async ([FromServices] MongoDbContext context, ProfileDto profile) => 
+    group.MapPost("/", async ([FromServices] MongoDbContext context, ProfileDto newProfile) => 
     {
       ProfileDto profile = new ProfileDto
       {
