@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gznIxy634mLbpN2WS3DcQ3xTw251nJ+K7Z0wE7L6n3+Dk6OfZnYXbQX0LqhGEw0hL/zJrXXU1yCXNBhbQPAFuA==",
+  "dgSpecHash": "V6fwjvEGB2ONE2nt7SXzrLiJ7eZ8Fci2uWlvrkZ8kCbpQkemOlPU1YIZYM0SPCPnhpnioz+dYB2qBqG4+7KT1A==",
   "success": true,
   "projectFilePath": "/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/Cocktails.Api.csproj",
   "expectedPackageFiles": [
@@ -127,8 +127,6 @@
     "/home/erik/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
     "/home/erik/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
     "/home/erik/.nuget/packages/zstdsharp.port/0.7.3/zstdsharp.port.0.7.3.nupkg.sha512",
-    "/home/erik/.nuget/packages/microsoft.netcore.app.ref/8.0.11/microsoft.netcore.app.ref.8.0.11.nupkg.sha512",
-    "/home/erik/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.11/microsoft.aspnetcore.app.ref.8.0.11.nupkg.sha512",
     "/home/erik/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.11/microsoft.netcore.app.host.linux-x64.8.0.11.nupkg.sha512"
   ],
   "logs": []
