@@ -59,7 +59,7 @@ POST http://localhost:5047/profiles/
 Content-Type: application/json
 
 {
-  "userName" : "TestName",
-  "email": "test@test.com",
+  "userName" : "TestName2",
+  "email": "test2@test.com",
   "passwordHash": "TestTestTest12345Password"
 }
