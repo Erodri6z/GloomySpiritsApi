@@ -10,7 +10,7 @@ public record class ProfileDto
   {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
-    [Required] public required string Id { get; set; }
+    public string Id { get; set; }
 
     [Required] public required string Username { get; set; }
 
