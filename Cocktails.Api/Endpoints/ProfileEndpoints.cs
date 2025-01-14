@@ -5,6 +5,8 @@ using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using BCrypt.Net;
+using Sprache;
 
 
 namespace Cocktails.Api.Endpoints; 
@@ -42,6 +44,15 @@ public static class ProfileEndpoints
       return Results.Created($"/profiles/{profile.Id}", profile);
     })
     .WithParameterValidation();
+
+    group.MapPost("/login", async ([FromServices] MongoDbContext context, LoginRequest login) => 
+    {
+      var user = await context.Profiles.Find(p => p.Username == login.Username).FirstOrDefaultAsync();
+
+      bool isPasswordValid = Bcrypt.Net.BCrypt.Verify(login.Password, user.PasswordHash);
+
+      return  isPasswordValid && user != null ? Result.Ok("Login sucessful") : Result.NotFound();
+    });
 
 
     return group;
