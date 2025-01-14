@@ -73,7 +73,7 @@ public static class DrinksEndpoints
     group.MapPost("/", async ([FromServices] MongoDbContext context, CreateDrinkDto newDrink) => 
     {
 
-      DrinkDto drink = new DrinkDto 
+      DrinkDto drink = new DrinkDto
       {
         Name = newDrink.Name,
         MainSpirit = newDrink.MainSpirit,
@@ -159,3 +159,4 @@ public static class DrinksEndpoints
     return group;
   }
 }
+ 

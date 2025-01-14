@@ -49,3 +49,18 @@ Content-Type: application/json
 
 ### 
 DELETE http://localhost:5047/drinks/6737a835c027c4a169777483
+
+###
+
+GET http://localhost:5047/profiles/
+
+###
+POST http://localhost:5047/profiles/
+Content-Type: application/json
+
+{
+  "userName" : "TestName",
+  "email": "test@test.com",
+  "passwordHash": "TestTestTest12345Password",
+  "dateOfBirth": "10/22/1987"
+}

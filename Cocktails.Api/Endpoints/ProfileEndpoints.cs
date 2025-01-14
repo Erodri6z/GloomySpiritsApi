@@ -26,7 +26,6 @@ public static class ProfileEndpoints
     {
       ProfileDto profile = new ProfileDto
       {
-        Id = newProfile.Id, 
         Username = newProfile.Username,
         Email = newProfile.Email,
         PasswordHash = newProfile.PasswordHash,
