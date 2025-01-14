@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "V6fwjvEGB2ONE2nt7SXzrLiJ7eZ8Fci2uWlvrkZ8kCbpQkemOlPU1YIZYM0SPCPnhpnioz+dYB2qBqG4+7KT1A==",
+  "dgSpecHash": "utPj8p1/m4eB5E+Wr9kosi4SVZdaRyD9kg7JO7i2lroR96rf9DMuaMA14jqzyX7wk/halsLvABAb6gl9VRUT0w==",
   "success": true,
   "projectFilePath": "/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/Cocktails.Api.csproj",
   "expectedPackageFiles": [
+    "/home/erik/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/home/erik/.nuget/packages/cloudinarydotnet/1.26.2/cloudinarydotnet.1.26.2.nupkg.sha512",
     "/home/erik/.nuget/packages/dnsclient/1.6.1/dnsclient.1.6.1.nupkg.sha512",
     "/home/erik/.nuget/packages/dotnetenv/3.1.1/dotnetenv.3.1.1.nupkg.sha512",
