@@ -63,3 +63,11 @@ Content-Type: application/json
   "email": "test2@test.com",
   "passwordHash": "TestTestTest12345Password"
 }
+###
+POST http://localhost:5047/profiles/login
+Content-Type: application/json
+
+{
+  "Username": "TestName2",
+  "password"
+}

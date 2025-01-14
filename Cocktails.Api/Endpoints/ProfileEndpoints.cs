@@ -49,9 +49,19 @@ public static class ProfileEndpoints
     {
       var user = await context.Profiles.Find(p => p.Username == login.Username).FirstOrDefaultAsync();
 
-      bool isPasswordValid = Bcrypt.Net.BCrypt.Verify(login.Password, user.PasswordHash);
+      bool isPasswordValid = BCrypt.Net.BCrypt.Verify(login.Password, user.PasswordHash);
 
-      return  isPasswordValid && user != null ? Result.Ok("Login sucessful") : Result.NotFound();
+      if (user == null) 
+      {
+        return Results.NotFound();
+      }else if (!isPasswordValid)
+      {
+        return Results.Unauthorized();
+      }else 
+      {
+        return Results.Ok("Login Successful");
+      }
+
     });
 
 
