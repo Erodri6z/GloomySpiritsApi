@@ -26,13 +26,14 @@ public static class ProfileEndpoints
 
     group.MapPost("/", async ([FromServices] MongoDbContext context, CreateProfileDto newProfile) => 
     {
+      string hashedPassword = BCrypt.Net.BCrypt.HashPassword(newProfile.PasswordHash);
       DateTime now = DateTime.Now;
 
       ProfileDto profile = new ProfileDto
       {
         Username = newProfile.Username,
         Email = newProfile.Email,
-        PasswordHash = newProfile.PasswordHash,
+        PasswordHash = hashedPassword,
         DateOfBirth = now
       };
 
