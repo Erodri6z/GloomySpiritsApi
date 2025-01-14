@@ -35,7 +35,7 @@ public static class ProfileEndpoints
 
       await context.Profiles.InsertOneAsync(profile);
 
-      return Results.Ok(profile);
+      return Results.Created($"/profiles/{profile.Id}", profile);
     })
     .WithParameterValidation();
 
