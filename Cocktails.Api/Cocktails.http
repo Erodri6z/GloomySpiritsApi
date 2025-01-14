@@ -61,6 +61,5 @@ Content-Type: application/json
 {
   "userName" : "TestName",
   "email": "test@test.com",
-  "passwordHash": "TestTestTest12345Password",
-  "dateOfBirth": "10/22/1987"
+  "passwordHash": "TestTestTest12345Password"
 }
