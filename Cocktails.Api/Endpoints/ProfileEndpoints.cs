@@ -15,7 +15,7 @@ public static class ProfileEndpoints
   {
     var group = app.MapGroup("profiles");
 
-    group.MapGet("/{id}", async (int id, [FromServices] MongoDbContext context) => 
+    group.MapGet("/{id}", async (string id, [FromServices] MongoDbContext context) => 
     {
       var filter = Builders<ProfileDto>.Filter.Eq(profile => profile.Id, id);
       var profile = await context.Profiles.Find(filter).FirstOrDefaultAsync();
@@ -24,12 +24,15 @@ public static class ProfileEndpoints
 
     group.MapPost("/", async ([FromServices] MongoDbContext context, ProfileDto newProfile) => 
     {
+      DateTime now = DateTime.Now;
+
       ProfileDto profile = new ProfileDto
       {
+        Id = newProfile.Id,
         Username = newProfile.Username,
         Email = newProfile.Email,
         PasswordHash = newProfile.PasswordHash,
-        DateOfBirth = newProfile.DateOfBirth
+        DateOfBirth = now
       };
 
       await context.Profiles.InsertOneAsync(profile);
@@ -42,4 +45,4 @@ public static class ProfileEndpoints
     return group;
   }
 
-}
+} 

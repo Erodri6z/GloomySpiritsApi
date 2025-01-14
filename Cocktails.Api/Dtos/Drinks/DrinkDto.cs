@@ -8,10 +8,9 @@ namespace Cocktails.Api.Dtos;
 
 public record class DrinkDto
 {
-    [BsonId] 
     [BsonRepresentation(BsonType.ObjectId)]
-    [Required] public string Id { get; set; } 
-    
+    [BsonId] 
+    public string Id { get; set; }
 
     [Required] public string Name { get; set; } = string.Empty;
     [Required] public string MainSpirit { get; set; } = string.Empty;
