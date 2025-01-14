@@ -20,6 +20,8 @@ public static class ProfileEndpoints
       var filter = Builders<ProfileDto>.Filter.Eq(profile => profile.Id, id);
       var profile = await context.Profiles.Find(filter).FirstOrDefaultAsync();
 
+      return profile is null ? Results.NotFound() : Results.Ok(profile);
+
     });
 
     group.MapPost("/", async ([FromServices] MongoDbContext context, CreateProfileDto newProfile) => 

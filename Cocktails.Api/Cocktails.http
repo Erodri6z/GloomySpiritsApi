@@ -52,7 +52,7 @@ DELETE http://localhost:5047/drinks/6737a835c027c4a169777483
 
 ###
 
-GET http://localhost:5047/profiles/
+GET http://localhost:5047/profiles/6786de2b4d277765c9e67279
 
 ###
 POST http://localhost:5047/profiles/
