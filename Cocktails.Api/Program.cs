@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Cocktails.Api.Endpoints;
 using DotNetEnv;
+using CloudinaryDotNet.Actions;
 
 Env.Load();
 
@@ -12,7 +13,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<MongoDbContext>();
 
-var key = Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("JWT_SECRET")!);
+var jwtSecret = Environment.GetEnvironmentVariable("JWT_SECRET") ?? "Development_Secret_Key_pls_no_sharing";
+
+if (string.IsNullOrEmpty(jwtSecret))
+{
+  throw new ArgumentNullException("No Secret");
+};
+
+var key = Encoding.UTF8.GetBytes(jwtSecret);
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
   options.TokenValidationParameters = new TokenValidationParameters
@@ -24,6 +32,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     ValidateLifetime = true,
   };
 });
+
+builder.Services.AddAuthorization(); 
 
 
 var app = builder.Build();
