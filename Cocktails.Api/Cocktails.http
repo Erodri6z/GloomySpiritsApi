@@ -10,6 +10,7 @@ GET http://localhost:5047/drinks/byVibe/Fancy
 
 ###
 POST http://localhost:5047/drinks 
+Authorization: Bearer <token>
 Content-Type: application/json
 
 {
@@ -28,14 +29,15 @@ Content-Type: application/json
   "vibe": "Modern Classic"
 }
 ###
-PUT http://localhost:5047/drinks/6737a835c027c4a169777483
+PUT http://localhost:5047/drinks/6737a835c027c4a169777485
+Authorization: Bearer <token>
 Content-Type: application/json
 
 {
   "name": "Old Fashioned",
   "mainSpirit": "Whiskey",
   "image": "",
-  "ingredients": ["Whiskey", "Simple Syrup"],
+  "ingredients": ["Whiskey", "Luxardo Syrup"],
   "measurementsOz": [ 2, 0.75 ],
   "bitters": [ "3 dashes of Angastora Bitters", "1 dash of Orange bitters" ],
   "garnish": ["Orange Peel", "Lemon Peel"],
@@ -49,6 +51,7 @@ Content-Type: application/json
 
 ### 
 DELETE http://localhost:5047/drinks/6737a835c027c4a169777483
+Authorization: Bearer e.z4lqbrc_
 
 ###
 

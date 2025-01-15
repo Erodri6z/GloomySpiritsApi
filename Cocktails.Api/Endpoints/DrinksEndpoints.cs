@@ -60,7 +60,7 @@ public static class DrinksEndpoints
       return drinks.Any() ?  Results.Ok(drinks) : Results.NotFound();
     });
 
-    //TODO: Find Drink By Vibe 
+    //TODO: -
     group.MapGet("/byVibe/{vibe}", async (string vibe, MongoDbContext context) => 
     {
       var filter = Builders<DrinkDto>.Filter.Eq(drink => drink.Vibe, vibe);
