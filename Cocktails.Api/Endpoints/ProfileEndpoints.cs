@@ -64,6 +64,14 @@ public static class ProfileEndpoints
 
     });
 
+    group.MapDelete("/{id}", (string id, MongoDbContext context) => 
+    {
+      context.Profiles.DeleteOne(profile => profile.Id == id);
+
+
+      return Results.NoContent();
+    });
+
 
     return group;
   }
