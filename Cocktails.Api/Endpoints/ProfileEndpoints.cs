@@ -7,6 +7,10 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using BCrypt.Net;
 using Sprache;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
 
 
 namespace Cocktails.Api.Endpoints; 
@@ -54,15 +58,31 @@ public static class ProfileEndpoints
       if (user == null) 
       {
         return Results.NotFound();
-      }else if (!isPasswordValid)
+      } 
+      
+      if (!isPasswordValid)
       {
         return Results.Unauthorized();
-      }else 
-      {
-        return Results.Ok("Login Successful");
-      }
-      
+      } 
 
+      var tokenHandler = new JwtSecurityTokenHandler();
+      var key = Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("JWT_SECRET")!);
+      var tokenDescriptor = new SecurityTokenDescriptor
+      {
+        Subject = new ClaimsIdentity(new[]
+        {
+          new Claim(ClaimTypes.Name, user.Username),
+          new Claim(ClaimTypes.Email, user.Email),
+          new Claim("UserId", user.Id)
+        }),
+        Expires = DateTime.UtcNow.AddDays(1),
+        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+      };
+
+      var token = tokenHandler.CreateToken(tokenDescriptor);
+      var tokenString = tokenHandler.WriteToken(token);
+
+      return Results.Ok(new { Token = tokenString });
     });
 
     group.MapDelete("/{id}", (string id, MongoDbContext context) => 

@@ -41,3 +41,11 @@
 /home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/obj/Debug/net8.0/linux-x64/Cocktails.Api.genruntimeconfig.cache
 /home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/obj/Debug/net8.0/linux-x64/ref/Cocktails.Api.dll
 /home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/BCrypt.Net-Next.dll
+/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/Microsoft.IdentityModel.Abstractions.dll
+/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/Microsoft.IdentityModel.Logging.dll
+/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/Microsoft.IdentityModel.Protocols.dll
+/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/Microsoft.IdentityModel.Tokens.dll
+/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/System.IdentityModel.Tokens.Jwt.dll
