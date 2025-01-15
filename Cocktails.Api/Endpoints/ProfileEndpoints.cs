@@ -65,8 +65,9 @@ public static class ProfileEndpoints
         return Results.Unauthorized();
       } 
 
+      var jwtSecret = Environment.GetEnvironmentVariable("JWT_SECRET") ?? "Development_Secret_Key_pls_no_sharing";
       var tokenHandler = new JwtSecurityTokenHandler();
-      var key = Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("JWT_SECRET")!);
+      var key = Encoding.UTF8.GetBytes(jwtSecret);
       var tokenDescriptor = new SecurityTokenDescriptor
       {
         Subject = new ClaimsIdentity(new[]
