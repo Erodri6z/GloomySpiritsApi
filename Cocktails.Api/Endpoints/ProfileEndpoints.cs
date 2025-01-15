@@ -61,6 +61,7 @@ public static class ProfileEndpoints
       {
         return Results.Ok("Login Successful");
       }
+      
 
     });
 
