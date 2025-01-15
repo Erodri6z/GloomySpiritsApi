@@ -11,6 +11,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace Cocktails.Api.Endpoints; 
@@ -86,7 +87,7 @@ public static class ProfileEndpoints
       return Results.Ok(new { Token = tokenString });
     });
 
-    group.MapDelete("/{id}", (string id, MongoDbContext context) => 
+    group.MapDelete("/{id}", [Authorize](string id, MongoDbContext context) => 
     {
       context.Profiles.DeleteOne(profile => profile.Id == id);
 

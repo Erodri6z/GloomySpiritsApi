@@ -3,6 +3,7 @@ using System.Diagnostics.Metrics;
 using System.Reflection;
 using Cocktails.Api.Data;
 using Cocktails.Api.Dtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -70,7 +71,7 @@ public static class DrinksEndpoints
 
     // Create a drink
     // TODO: find a way to create images with cloudary
-    group.MapPost("/", async ([FromServices] MongoDbContext context, CreateDrinkDto newDrink) => 
+    group.MapPost("/", [Authorize] async ([FromServices] MongoDbContext context, CreateDrinkDto newDrink) => 
     {
 
       DrinkDto drink = new DrinkDto
@@ -98,7 +99,7 @@ public static class DrinksEndpoints
 
     // // Update a drink
 
-    group.MapPut("/{id}", async (string id, UpdateDrinkDto updatedDrink, MongoDbContext context) =>
+    group.MapPut("/{id}", [Authorize] async (string id, UpdateDrinkDto updatedDrink, MongoDbContext context) =>
     {
       var filter = Builders<DrinkDto>.Filter.Eq(drink => drink.Id, id);
       var existingDrink = await context.Drinks.Find(filter).FirstOrDefaultAsync();
@@ -149,7 +150,7 @@ public static class DrinksEndpoints
 
     // // Delete a drink
 
-    group.MapDelete("/{id}", (string id, MongoDbContext context) => 
+    group.MapDelete("/{id}", [Authorize] (string id, MongoDbContext context) => 
     {
       context.Drinks.DeleteOne(drink => drink.Id == id);
 
