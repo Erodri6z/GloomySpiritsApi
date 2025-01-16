@@ -10,7 +10,7 @@
       "Cocktails.Api/1.0.0": {
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
-          "CloudinaryDotNet": "1.26.2",
+          "CloudinaryDotNet": "1.27.1",
           "DotNetEnv": "3.1.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
           "MinimalApis.Extensions": "0.11.0",
@@ -28,7 +28,7 @@
           }
         }
       },
-      "CloudinaryDotNet/1.26.2": {
+      "CloudinaryDotNet/1.27.1": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
           "System.Net.Http": "4.3.4",
@@ -36,8 +36,8 @@
         },
         "runtime": {
           "lib/netstandard2.0/CloudinaryDotNet.dll": {
-            "assemblyVersion": "1.26.2.0",
-            "fileVersion": "1.26.2.0"
+            "assemblyVersion": "1.27.1.0",
+            "fileVersion": "1.27.1.0"
           }
         }
       },
@@ -1143,12 +1143,12 @@
       "path": "bcrypt.net-next/4.0.3",
       "hashPath": "bcrypt.net-next.4.0.3.nupkg.sha512"
     },
-    "CloudinaryDotNet/1.26.2": {
+    "CloudinaryDotNet/1.27.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-JUDOUKa7T+h0nmMhBdBxCkCldN4/DIZLOlh5p30KrcBX6Spral6vxTWhzk6OH2pGd8MGL5R379EsK7tJr/IQpw==",
-      "path": "cloudinarydotnet/1.26.2",
-      "hashPath": "cloudinarydotnet.1.26.2.nupkg.sha512"
+      "sha512": "sha512-siUWEx20S4UtvzNlF5jI6hC+4IR0TxqmeaxtzOlOSqR7d+qYr0Q8GL4ritseuj5t5Qv9nuO/QxV2vy5P1M/mPg==",
+      "path": "cloudinarydotnet/1.27.1",
+      "hashPath": "cloudinarydotnet.1.27.1.nupkg.sha512"
     },
     "DnsClient/1.6.1": {
       "type": "package",
