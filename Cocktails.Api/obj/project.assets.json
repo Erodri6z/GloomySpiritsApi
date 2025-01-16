@@ -15,7 +15,7 @@
           }
         }
       },
-      "CloudinaryDotNet/1.26.2": {
+      "CloudinaryDotNet/1.27.1": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
@@ -1799,7 +1799,7 @@
           }
         }
       },
-      "CloudinaryDotNet/1.26.2": {
+      "CloudinaryDotNet/1.27.1": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
@@ -3816,16 +3816,16 @@
         "readme.md"
       ]
     },
-    "CloudinaryDotNet/1.26.2": {
-      "sha512": "JUDOUKa7T+h0nmMhBdBxCkCldN4/DIZLOlh5p30KrcBX6Spral6vxTWhzk6OH2pGd8MGL5R379EsK7tJr/IQpw==",
+    "CloudinaryDotNet/1.27.1": {
+      "sha512": "siUWEx20S4UtvzNlF5jI6hC+4IR0TxqmeaxtzOlOSqR7d+qYr0Q8GL4ritseuj5t5Qv9nuO/QxV2vy5P1M/mPg==",
       "type": "package",
-      "path": "cloudinarydotnet/1.26.2",
+      "path": "cloudinarydotnet/1.27.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "CloudinaryIcon.png",
         "README.md",
-        "cloudinarydotnet.1.26.2.nupkg.sha512",
+        "cloudinarydotnet.1.27.1.nupkg.sha512",
         "cloudinarydotnet.nuspec",
         "lib/net452/CloudinaryDotNet.dll",
         "lib/net452/CloudinaryDotNet.xml",
@@ -8412,7 +8412,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "BCrypt.Net-Next >= 4.0.3",
-      "CloudinaryDotNet >= 1.26.2",
+      "CloudinaryDotNet >= 1.27.1",
       "DotNetEnv >= 3.1.1",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.0",
       "MinimalApis.Extensions >= 0.11.0",
@@ -8462,7 +8462,7 @@
           },
           "CloudinaryDotNet": {
             "target": "Package",
-            "version": "[1.26.2, )"
+            "version": "[1.27.1, )"
           },
           "DotNetEnv": {
             "target": "Package",

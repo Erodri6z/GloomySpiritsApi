@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "zj2kspFlvyeZixoMsogX/2N6Vq90r8Wq8N55sPsy3rXXJ2j25Fnx0rPawL4G+TmIibcFgJ9R0m0EHUcv5Ud2Lg==",
+  "dgSpecHash": "2efbgbVl41eVVNq0IndBCxx01cwLQG5s3+6h9qygbnRouxFEgY9Yt+I8eL90CPVeeEeUucHfTxu4UAdkDrW+xw==",
   "success": true,
   "projectFilePath": "/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/Cocktails.Api.csproj",
   "expectedPackageFiles": [
     "/home/erik/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
-    "/home/erik/.nuget/packages/cloudinarydotnet/1.26.2/cloudinarydotnet.1.26.2.nupkg.sha512",
+    "/home/erik/.nuget/packages/cloudinarydotnet/1.27.1/cloudinarydotnet.1.27.1.nupkg.sha512",
     "/home/erik/.nuget/packages/dnsclient/1.6.1/dnsclient.1.6.1.nupkg.sha512",
     "/home/erik/.nuget/packages/dotnetenv/3.1.1/dotnetenv.3.1.1.nupkg.sha512",
     "/home/erik/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.0/microsoft.aspnetcore.authentication.jwtbearer.8.0.0.nupkg.sha512",
