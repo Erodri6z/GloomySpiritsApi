@@ -12,7 +12,6 @@ Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSingleton<MongoDbContext>();
 
 var jwtSecret = Environment.GetEnvironmentVariable("JWT_SECRET") ?? "Development_Secret_Key_pls_no_sharing";
 
@@ -38,6 +37,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 var cloud = Environment.GetEnvironmentVariable("CLOUDINARY_UR");
 
 builder.Services.AddSingleton(new CloudinaryService(cloud));
+builder.Services.AddSingleton<MongoDbContext>();
 
 builder.Services.AddAuthorization(); 
 

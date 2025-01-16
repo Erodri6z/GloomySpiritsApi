@@ -71,14 +71,24 @@ public static class DrinksEndpoints
 
     // Create a drink
     // TODO: find a way to create images with cloudary
-    group.MapPost("/", [Authorize] async ([FromServices] MongoDbContext context, CreateDrinkDto newDrink) => 
+    group.MapPost("/", [Authorize] async ([FromServices] MongoDbContext context, [FromServices] CloudinaryService cloudaryService, CreateDrinkDto newDrink,
+    HttpRequest request) => 
     {
+      string? imageUrl = null;
+      var file = request.Form.Files.FirstOrDefault();
+      if (file != null && file.Length > 0)
+      {
+        using (var stream = file.OpenReadStream())
+        {
+          imageUrl = await cloudaryService.UploadImageAsync(stream, file.FileName);
+        }
+      }
 
       DrinkDto drink = new DrinkDto
       {
         Name = newDrink.Name,
         MainSpirit = newDrink.MainSpirit,
-        Image = newDrink.Image,
+        Image = imageUrl ?? newDrink.Image,
         Ingredients = newDrink.Ingredients,
         MeasurementsOz = newDrink.MeasurementsOz,
         Bitters = newDrink.Bitters,
