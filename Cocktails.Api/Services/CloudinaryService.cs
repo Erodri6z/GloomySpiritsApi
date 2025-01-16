@@ -8,9 +8,9 @@ namespace Cocktails.Api.Services;
   {
     private readonly Cloudinary _cloudinary;
 
-    public CloudinaryService(string cloudName, string apiKey, string apiSecret)
+    public CloudinaryService(string cloud)
     {
-      var account = new Account(cloudName, apiKey, apiSecret);
+      var account = new Account(cloud);
       _cloudinary = new Cloudinary(account);
     }
 

@@ -6,6 +6,7 @@ using System.Text;
 using Cocktails.Api.Endpoints;
 using DotNetEnv;
 using CloudinaryDotNet.Actions;
+using Cocktails.Api.Services;
 
 Env.Load();
 
@@ -32,6 +33,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     ValidateLifetime = true,
   };
 });
+
+
+var cloud = Environment.GetEnvironmentVariable("CLOUDINARY_UR");
+
+builder.Services.AddSingleton(new CloudinaryService(cloud));
 
 builder.Services.AddAuthorization(); 
 
