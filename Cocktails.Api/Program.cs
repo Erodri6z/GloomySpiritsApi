@@ -34,7 +34,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 });
 
 
-var cloud = Environment.GetEnvironmentVariable("CLOUDINARY_UR");
+var cloud = Environment.GetEnvironmentVariable("CLOUDINARY_URL");
 
 builder.Services.AddSingleton(new CloudinaryService(cloud));
 builder.Services.AddSingleton<MongoDbContext>();
