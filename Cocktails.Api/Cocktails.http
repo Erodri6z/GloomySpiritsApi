@@ -10,7 +10,16 @@ GET http://localhost:5047/drinks/byVibe/Fancy
 
 ###
 POST http://localhost:5047/drinks 
-Authorization: Bearer <token>
+Authorization: Bearer token
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="image"; filename="martini.jpg"
+Content-Type: image/jpeg
+
+< ./ImageTest/martini.jpg
+--boundary
+Content-Disposition: form-data; name="data"
 Content-Type: application/json
 
 {
@@ -28,9 +37,10 @@ Content-Type: application/json
   "credit": "",
   "vibe": "Modern Classic"
 }
+--boundary--
 ###
 PUT http://localhost:5047/drinks/6737a835c027c4a169777485
-Authorization: Bearer <token>
+Authorization: Bearer Token
 Content-Type: application/json
 
 {
