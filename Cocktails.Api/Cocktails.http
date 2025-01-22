@@ -81,6 +81,6 @@ POST http://localhost:5047/profiles/login
 Content-Type: application/json
 
 {
-  "Username": "TestName2",
+  "username": "TestName2",
   "password": "TestTestTest12345Password"
 }

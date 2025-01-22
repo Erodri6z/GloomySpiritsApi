@@ -34,6 +34,16 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 });
 
 
+builder.Services.AddCors(options =>
+{
+  options.AddPolicy("AllowAll", policy =>
+  {
+    policy.AllowAnyOrigin()
+      .AllowAnyMethod()
+      .AllowAnyHeader();
+  });
+});
+
 var cloud = Environment.GetEnvironmentVariable("CLOUDINARY_URL");
 
 builder.Services.AddSingleton(new CloudinaryService(cloud));
@@ -47,6 +57,7 @@ var app = builder.Build();
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.UseCors("AllowAll");
 
 app.MapDrinksEndpoints();
 app.MapProfilesEndpoints();
