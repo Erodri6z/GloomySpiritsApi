@@ -3,11 +3,16 @@ using System.Diagnostics.Metrics;
 using System.Reflection;
 using Cocktails.Api.Data;
 using Cocktails.Api.Dtos;
+using Cocktails.Api.Entities;
 using Cocktails.Api.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Identity;
 
 
 
@@ -73,24 +78,41 @@ public static class DrinksEndpoints
 
     // Create a drink
     // TODO: find a way to create images with cloudary
-    group.MapPost("/", [Authorize] async ([FromServices] MongoDbContext context, [FromServices] CloudinaryService cloudaryService, CreateDrinkDto newDrink,
+    group.MapPost("/",  async ([FromServices] MongoDbContext context, CreateDrinkDto newDrink,
     HttpRequest request) => 
     {
-      string? imageUrl = null;
-      var file = request.Form.Files.FirstOrDefault();
-      if (file != null && file.Length > 0)
+      Console.WriteLine("This is getting hit");
+      //   var form = await request.ReadFormAsync();
+      //   if (!form.ContainsKey("drinkData"))
+      //       return Results.BadRequest(new { message = "Missing drinkData field in form." });
+
+
+      //   // Deserialize drinkData from form field
+      //   var newDrink = JsonSerializer.Deserialize<CreateDrinkDto>(drinkData);
+      //   if (newDrink == null)
+      //     return Results.BadRequest(new { message = "Invalid drinkData JSON format." });
+
+
+      // string? imageUrl = null;
+      // var file = request.Form.Files.FirstOrDefault();
+      // if (file != null && file.Length > 0)
+      // {
+      //   using (var stream = file.OpenReadStream())
+      //   {
+      //     imageUrl = await cloudaryService.UploadImageAsync(stream, file.FileName);
+      //   }
+      // }
+
+      if (newDrink == null)
       {
-        using (var stream = file.OpenReadStream())
-        {
-          imageUrl = await cloudaryService.UploadImageAsync(stream, file.FileName);
-        }
+        return Results.BadRequest(new { message = "Invalid JSON: Request body is empty." });
       }
 
       DrinkDto drink = new DrinkDto
       {
         Name = newDrink.Name,
         MainSpirit = newDrink.MainSpirit,
-        Image = imageUrl ?? newDrink.Image,
+        // Image = newDrink.Image,
         Ingredients = newDrink.Ingredients,
         MeasurementsOz = newDrink.MeasurementsOz,
         Bitters = newDrink.Bitters,
@@ -105,9 +127,10 @@ public static class DrinksEndpoints
 
       await context.Drinks.InsertOneAsync(drink) ;
 
+
     return Results.Created($"/drinks/{drink.Id}", drink);
-    })
-    .WithParameterValidation();
+    });
+    // .WithParameterValidation();
 
     // // Update a drink
 
@@ -169,6 +192,37 @@ public static class DrinksEndpoints
       return Results.NoContent();
     });
 
+    group.MapPut("/{id}/image", async ([FromServices] MongoDbContext context, [FromRoute] string id, HttpRequest request, [FromServices] CloudinaryService cloudinaryService) => 
+    {
+      var drink = await context.Drinks.Find(d => d.Id == id).FirstOrDefaultAsync();
+      if (drink == null)
+      {
+        return Results.NotFound(new {message = "Drink not found"});
+      }
+
+      var file = request.Form.Files.FirstOrDefault();
+      if (file == null)
+      {
+        return Results.BadRequest(new {message = "No Image"});
+      }
+
+      string imgUrl;
+      using (var stream = file.OpenReadStream())
+      {
+        imgUrl = await cloudinaryService.UploadImageAsync(stream, file.FileName);
+      }
+      var updateDefinition = Builders<DrinkDto>.Update.Set(d => d.Image, imgUrl);
+      await context.Drinks.UpdateOneAsync(d => d.Id == id, updateDefinition);
+
+
+      drink.Image = imgUrl;
+      return Results.Ok(drink);
+
+    });
+    
+    
+    
     return group;
   }
+  
 }

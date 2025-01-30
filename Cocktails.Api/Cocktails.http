@@ -10,7 +10,7 @@ GET http://localhost:5047/drinks/byVibe/Fancy
 
 ###
 POST http://localhost:5047/drinks 
-Authorization: Bearer token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRlc3ROYW1lMiIsImVtYWlsIjoidGVzdDJAdGVzdC5jb20iLCJVc2VySWQiOiI2Nzg2ZTBjYjdlM2VjOTQyMDQ4ZDcxNzkiLCJuYmYiOjE3Mzc5NDA0MzIsImV4cCI6MTczODAyNjgzMiwiaWF0IjoxNzM3OTQwNDMyfQ._IuXaTMb989nYaUCsg3Jdq2lUs3iqvdo37t8gbzzVcc
 Content-Type: multipart/form-data; boundary=boundary
 
 --boundary
@@ -40,7 +40,7 @@ Content-Type: application/json
 --boundary--
 ###
 PUT http://localhost:5047/drinks/6737a835c027c4a169777485
-Authorization: Bearer Token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRlc3ROYW1lMiIsImVtYWlsIjoidGVzdDJAdGVzdC5jb20iLCJVc2VySWQiOiI2Nzg2ZTBjYjdlM2VjOTQyMDQ4ZDcxNzkiLCJuYmYiOjE3Mzc5NDA0MzIsImV4cCI6MTczODAyNjgzMiwiaWF0IjoxNzM3OTQwNDMyfQ._IuXaTMb989nYaUCsg3Jdq2lUs3iqvdo37t8gbzzVcc
 Content-Type: application/json
 
 {
@@ -60,8 +60,8 @@ Content-Type: application/json
 }
 
 ### 
-DELETE http://localhost:5047/drinks/6737a835c027c4a169777483
-Authorization: Bearer e.z4lqbrc_
+DELETE http://localhost:5047/drinks/6737a835c027c4a169777485
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRlc3ROYW1lMiIsImVtYWlsIjoidGVzdDJAdGVzdC5jb20iLCJVc2VySWQiOiI2Nzg2ZTBjYjdlM2VjOTQyMDQ4ZDcxNzkiLCJuYmYiOjE3Mzc5NDA0MzIsImV4cCI6MTczODAyNjgzMiwiaWF0IjoxNzM3OTQwNDMyfQ._IuXaTMb989nYaUCsg3Jdq2lUs3iqvdo37t8gbzzVcc
 
 ###
 

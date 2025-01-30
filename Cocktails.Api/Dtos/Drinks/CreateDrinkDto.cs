@@ -7,7 +7,7 @@ public class CreateDrinkDto
 {
   [Required] public required  string Name { get; set; }
   [Required] public required string MainSpirit { get; set; }
-  public string? Image { get; set; }
+  // public string? Image { get; set; }
   [Required] public required string[] Ingredients { get; set; }
   [Required] public required decimal[] MeasurementsOz { get; set; }
   public string[]? Bitters { get; set; }

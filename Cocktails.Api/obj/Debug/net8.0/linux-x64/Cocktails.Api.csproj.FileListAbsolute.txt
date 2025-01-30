@@ -49,3 +49,12 @@
 /home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/Microsoft.IdentityModel.Tokens.dll
 /home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/System.IdentityModel.Tokens.Jwt.dll
+/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/Microsoft.DotNet.PlatformAbstractions.dll
+/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/Microsoft.Extensions.DependencyInjection.dll
+/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/Microsoft.Extensions.DependencyModel.dll
+/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/Microsoft.Extensions.Hosting.Abstractions.dll
+/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/Microsoft.Extensions.Logging.Abstractions.dll
+/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/Microsoft.Extensions.ObjectPool.dll
+/home/erik/code/personal-projects/GloomySpiritsV2/cocktail-backend-C#/Cocktails.Api/bin/Debug/net8.0/linux-x64/Microsoft.Extensions.Options.dll
