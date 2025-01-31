@@ -192,8 +192,12 @@ public static class DrinksEndpoints
       return Results.NoContent();
     });
 
-    group.MapPut("/{id}/image", async ([FromServices] MongoDbContext context, [FromRoute] string id, HttpRequest request, [FromServices] CloudinaryService cloudinaryService) => 
+    group.MapPut("/image/{id}", async ([FromServices] MongoDbContext context, [FromRoute] string id, HttpRequest request, [FromServices] CloudinaryService cloudinaryService) => 
     {
+      Console.WriteLine("Image route correct");
+      Console.WriteLine($"Received request for drinkId: {id}");
+
+
       var drink = await context.Drinks.Find(d => d.Id == id).FirstOrDefaultAsync();
       if (drink == null)
       {
@@ -214,8 +218,11 @@ public static class DrinksEndpoints
       var updateDefinition = Builders<DrinkDto>.Update.Set(d => d.Image, imgUrl);
       await context.Drinks.UpdateOneAsync(d => d.Id == id, updateDefinition);
 
+      Console.WriteLine("Image backend getting hit");
 
+      
       drink.Image = imgUrl;
+      Console.WriteLine(drink);
       return Results.Ok(drink);
 
     });

@@ -7,11 +7,11 @@ namespace Cocktails.Api.Services;
   public class CloudinaryService
   {
     private readonly Cloudinary _cloudinary;
-
-    public CloudinaryService(string cloud)
+    public CloudinaryService(string cloudName, string apiKey, string apiSecret)
     {
-      var account = new Account(cloud);
+      var account = new Account(cloudName, apiKey, apiSecret);
       _cloudinary = new Cloudinary(account);
+      _cloudinary.Api.Secure = true;
     }
 
     public async Task<string> UploadImageAsync(Stream fileStream, string fileName)
@@ -21,7 +21,7 @@ namespace Cocktails.Api.Services;
         File = new FileDescription(fileName, fileStream),
         PublicId = $"cocktails/{Path.GetFileNameWithoutExtension(fileName)}",
         Overwrite = true,
-        // ResourceType = ResourceType.Image
+        Type = "upload"
       };
 
       var uploadResult = await _cloudinary.UploadAsync(uploadParams);

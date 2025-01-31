@@ -7,6 +7,7 @@ using Cocktails.Api.Endpoints;
 using DotNetEnv;
 using CloudinaryDotNet.Actions;
 using Cocktails.Api.Services;
+using CloudinaryDotNet;
 
 Env.Load();
 
@@ -44,9 +45,13 @@ builder.Services.AddCors(options =>
   });
 });
 
-var cloud = Environment.GetEnvironmentVariable("CLOUDINARY_URL");
+var cloudName = Environment.GetEnvironmentVariable("CLOUDINARY_CLOUD_NAME");
+var apiKey = Environment.GetEnvironmentVariable("CLOUDINARY_API_KEY");
+var apiSecret = Environment.GetEnvironmentVariable("CLOUDINARY_API_SECRET");
 
-builder.Services.AddSingleton(new CloudinaryService(cloud));
+
+builder.Services.AddSingleton(new CloudinaryService(cloudName, apiKey, apiSecret)); 
+
 builder.Services.AddSingleton<MongoDbContext>();
 
 builder.Services.AddAuthorization(); 
