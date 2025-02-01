@@ -134,7 +134,7 @@ public static class DrinksEndpoints
 
     // // Update a drink
 
-    group.MapPut("/{id}", [Authorize] async (string id, UpdateDrinkDto updatedDrink, MongoDbContext context) =>
+    group.MapPut("/{id}",  async (string id, UpdateDrinkDto updatedDrink, MongoDbContext context, HttpRequest request) =>
     {
       var filter = Builders<DrinkDto>.Filter.Eq(drink => drink.Id, id);
       var existingDrink = await context.Drinks.Find(filter).FirstOrDefaultAsync();
@@ -180,7 +180,7 @@ public static class DrinksEndpoints
 
       await context.Drinks.UpdateOneAsync(filter, update);
 
-      return Results.NoContent();
+      return Results.Ok(updatedDrink);
     });
 
     // // Delete a drink

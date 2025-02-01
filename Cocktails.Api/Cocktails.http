@@ -52,7 +52,7 @@ Content-Type: application/json
   "bitters": [ "3 dashes of Angastora Bitters", "1 dash of Orange bitters" ],
   "garnish": ["Orange Peel", "Lemon Peel"],
   "color": "Brown",
-  "recommendedGlasses": ["Rocks Glass"],
+  "recommendedGlasses": ["Rocks Glass","Red Cup"],
   "notes": [""],
   "method": ["Stirred", "Build-In-Glass"],
   "credit": "James Bond",

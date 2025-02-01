@@ -1,18 +1,25 @@
 namespace Cocktails.Api.Dtos;
 
 public record class UpdateDrinkDto
-(
-  string Name,
-  string MainSpirit,
-  string? Image,
-  string[] Ingredients,
-  decimal[] MeasurementsOz,
-  string[]? Bitters,
-  string[]? Garnish,
-  string Color,
-  string[] RecommendedGlasses,
-  string[] Notes,
-  string[] Method,
-  string? Credit,
-  string Vibe
-);
+{
+  
+  public required string Name { get; set; }
+  public required string MainSpirit { get; set; }
+  public string? Image { get; set; } 
+  public required string[] Ingredients { get; set; } 
+
+  public required decimal[] MeasurementsOz { get; set; } 
+
+  public string[]? Bitters { get; set; } 
+
+  public string[]? Garnish { get; set; } 
+
+  public required string Color { get; set; } 
+  public required string[] RecommendedGlasses { get; set; } 
+  public required string[] Notes { get; set; } 
+  public required string[] Method { get; set; } 
+
+  public required string? Credit { get; set; } 
+  public required string Vibe { get; set; } 
+
+};
