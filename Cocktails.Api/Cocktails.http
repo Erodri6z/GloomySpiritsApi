@@ -4,7 +4,7 @@ GET http://localhost:5047/drinks/6737a835c027c4a169777485
 ###
 GET http://localhost:5047/drinks/byAlcohol/Vodka
 ###
-GET http://localhost:5047/drinks/byName/Martini 
+GET http://localhost:5047/drinks/byName/Ma 
 ###
 GET http://localhost:5047/drinks/byVibe/Fancy 
 
@@ -61,20 +61,21 @@ Content-Type: application/json
 
 ### 
 DELETE http://localhost:5047/drinks/6737a835c027c4a169777485
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRlc3ROYW1lMiIsImVtYWlsIjoidGVzdDJAdGVzdC5jb20iLCJVc2VySWQiOiI2Nzg2ZTBjYjdlM2VjOTQyMDQ4ZDcxNzkiLCJuYmYiOjE3Mzc5NDA0MzIsImV4cCI6MTczODAyNjgzMiwiaWF0IjoxNzM3OTQwNDMyfQ._IuXaTMb989nYaUCsg3Jdq2lUs3iqvdo37t8gbzzVcc
+Authorization: Bearer
+
+###
+DELETE http://localhost:5047/profiles/6786e0cb7e3ec942048d7179
 
 ###
 
-GET http://localhost:5047/profiles/6786de2b4d277765c9e67279
+GET http://localhost:5047/profiles/
 
 ###
 POST http://localhost:5047/profiles/
 Content-Type: application/json
 
 {
-  "userName" : "TestName2",
-  "email": "test2@test.com",
-  "passwordHash": "TestTestTest12345Password"
+
 }
 ###
 POST http://localhost:5047/profiles/login
