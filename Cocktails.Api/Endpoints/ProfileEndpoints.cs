@@ -36,7 +36,7 @@ public static class ProfileEndpoints
 
     });
 
-    group.MapPost("/", async ([FromServices] MongoDbContext context, CreateProfileDto newProfile) => 
+    group.MapPost("/", [Authorize] async  ([FromServices] MongoDbContext context, CreateProfileDto newProfile) => 
     {
       string hashedPassword = BCrypt.Net.BCrypt.HashPassword(newProfile.PasswordHash);
       DateTime now = DateTime.Now;
